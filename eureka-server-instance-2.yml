@@ -13,7 +13,7 @@ eureka:
     registerWithEureka: false
     fetchRegistry: false
     serviceUrl:
-      defaultZone: http://eureka-server:8070/eureka, http://eureka-instance-3:8070/eureka
+      defaultZone: http://eureka-server:8070/eureka, http://eureka-instance-3:8073/eureka
   server:
     waitTimeInMsWhenSyncEmpty: 5
 
