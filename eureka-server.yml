@@ -1,5 +1,7 @@
 spring:
-  profiles: default
+  config:
+    active:
+      on-profile: default
   application:
     name: eureka-server
   boot:
