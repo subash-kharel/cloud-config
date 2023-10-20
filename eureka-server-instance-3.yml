@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: eureka-server-instance-3
+  boot:
+    admin:
+      context-path: /admin
+server:
+  port: 8073
+eureka:
+  instance:
+    hostname: eureka-instance-3
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://eureka-server:8070/eureka, http://eureka-instance-2:8072/eureka
+  server:
+    waitTimeInMsWhenSyncEmpty: 5
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
