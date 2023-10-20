@@ -10,8 +10,8 @@ eureka:
   instance:
     hostname: eureka-server-instance-2
   client:
-    registerWithEureka: false
-    fetchRegistry: false
+    registerWithEureka: true
+    fetchRegistry: true
     serviceUrl:
       defaultZone: http://eureka-server:8070/eureka, http://eureka-server-instance-3:8073/eureka
   server:
