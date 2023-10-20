@@ -1,7 +1,4 @@
 spring:
-  config:
-    active:
-      on-profile: instance-2
   application:
     name: eureka-server-instance-2
   boot:
