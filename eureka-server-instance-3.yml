@@ -1,4 +1,5 @@
 spring:
+  profiles: instance-3
   application:
     name: eureka-server-instance-3
   boot:
@@ -10,8 +11,8 @@ eureka:
   instance:
     hostname: eureka-server-instance-3
   client:
-    registerWithEureka: true
-    fetchRegistry: true
+    registerWithEureka: false
+    fetchRegistry: false
     serviceUrl:
       defaultZone: http://eureka-server:8070/eureka, http://eureka-server-instance-2:8072/eureka
   server:
