@@ -32,12 +32,12 @@ spring:
          - Path=/license/**
          filters:
          - RewritePath=/license/(?<path>.*), /$\{path}
-       - id: test-service
-         uri: lb://test-service
-         predicates:
-         - Path=/test/**
-         filters:
-         - RewritePath=/test/(?<path>.*), /$\{path}
+       # - id: test-service
+       #   uri: lb://test-service
+       #   predicates:
+       #   - Path=/test/**
+       #   filters:
+       #   - RewritePath=/test/(?<path>.*), /$\{path}
 
        
 management:
