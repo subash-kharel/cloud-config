@@ -33,19 +33,19 @@ spring:
           filters:
             - RewritePath=/license/(?<path>.*), /$\{path}
 
-        - id: google-service
-          uri: https://www.google.com
-          predicates:
-           - Path=/google/**
-          filters:
-            - RewritePath=/google/(?<path>.*), /$\{path}
+        # - id: google-service
+        #   uri: https://www.google.com
+        #   predicates:
+        #    - Path=/google/**
+        #   filters:
+        #     - RewritePath=/google/(?<path>.*), /$\{path}
 
-        -  id: baylor-service
-           uri: https://www.baylor.edu
-           predicates:
-           - Path=/baylor/**
-           filters:
-            - RewritePath=/baylor/(?<path>.*), /$\{path}
+        # -  id: baylor-service
+        #    uri: https://www.baylor.edu
+        #    predicates:
+        #    - Path=/baylor/**
+        #    filters:
+        #     - RewritePath=/baylor/(?<path>.*), /$\{path}
 
        
 management:
