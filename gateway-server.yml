@@ -38,14 +38,14 @@ spring:
           predicates:
            - Path=/google/**
           filters:
-        - RewritePath=/google/(?<path>.*), /$\{path}
+            - RewritePath=/google/(?<path>.*), /$\{path}
 
         -  id: baylor-service
-           uri:  https://www.baylor.edu
+           uri: https://www.baylor.edu
            predicates:
            - Path=/baylor/**
            filters:
-        - RewritePath=/baylor/(?<path>.*), /$\{path}
+            - RewritePath=/baylor/(?<path>.*), /$\{path}
 
        
 management:
