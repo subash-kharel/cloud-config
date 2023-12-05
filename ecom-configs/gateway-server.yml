@@ -36,35 +36,40 @@ eureka:
 #           - RemoveRequestHeader= Cookie,Set-Cookie
 
   spring:
-    cloud:
-      loadbalancer.ribbon.enabled: false
-      gateway:
+    zipkin:
+    baseUrl: http://zipkin:9411
+  sleuth:
+    sampler:
+      percentage: 1
+  cloud:
+    loadbalancer.ribbon.enabled: false
+    gateway:
         # discovery:
         #   locator:
         #     enabled: true
         #     lowerCaseServiceId: true
-        routes:
-          - id: cart-item
-            uri: lb://cart-item
-            predicates:
-              - Path=/cart/**
-            filters:
-              - RewritePath=/cart/(?<path>.*), /$\{path}
-              - RemoveRequestHeader= Cookie,Set-Cookie
-          - id: order
-            uri: lb://order
-            predicates:
-              - Path=/license/**
-            filters:
-              - RewritePath=/order/(?<path>.*), /$\{path}
-              - RemoveRequestHeader= Cookie,Set-Cookie
-          - id: catalog
-            uri: lb://catalog
-            predicates:
-              - Path=/catalog/**
-            filters:
-              - RewritePath=/catalog/(?<path>.*), /$\{path}
-              - RemoveRequestHeader= Cookie,Set-Cookie
+      routes:
+        - id: cart-item
+          uri: lb://cart-item
+          predicates:
+          - Path=/cart/**
+          filters:
+          - RewritePath=/cart/(?<path>.*), /$\{path}
+          - RemoveRequestHeader= Cookie,Set-Cookie
+        - id: order
+          uri: lb://order
+          predicates:
+          - Path=/license/**
+          filters:
+          - RewritePath=/order/(?<path>.*), /$\{path}
+          - RemoveRequestHeader= Cookie,Set-Cookie
+        - id: catalog
+          uri: lb://catalog
+          predicates:
+          - Path=/catalog/**
+          filters:
+          - RewritePath=/catalog/(?<path>.*), /$\{path}
+          - RemoveRequestHeader= Cookie,Set-Cookie
 
        
 management:
